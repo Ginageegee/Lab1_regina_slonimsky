@@ -104,6 +104,7 @@ struct ContentView: View {
     }
     //handles what users select
     private func handleUserTap(_ choice: Choice) {
+        //stops user from being able to answer again
         guard !hasAnsweredThisRound else { return }
 
         userChoice = choice
