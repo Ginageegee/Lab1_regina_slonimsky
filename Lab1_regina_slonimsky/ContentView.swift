@@ -80,7 +80,7 @@ struct ContentView: View {
                     .fontWeight(.semibold)
 
                 Spacer()
-
+                //show icons after answering
                 if hasAnsweredThisRound {
                     if isCorrectOption {
                         Image(systemName: "checkmark.circle.fill")
@@ -99,6 +99,7 @@ struct ContentView: View {
                     .fill(Color(.secondarySystemBackground))
             )
         }
+        //prevents tapping during the same round 
         .disabled(hasAnsweredThisRound)
     }
 
