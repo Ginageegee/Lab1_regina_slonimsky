@@ -20,10 +20,17 @@ struct ContentView: View {
     }
     @State private var userChoice: Choice? = nil //stores choice-  nil if nothing is selected.
 
+    //show summary-  after every 10 attempts
     @State private var showSummaryAlert: Bool = false
 
-    private let timer = Timer.publish(every: 5.0, on: .main, in: .common).autoconnect()
+    //create a timer that fires every 5 seconds
+    private let timer = Timer.publish(
+        every: 5.0,
+        on: .main,
+        in: .common //loops
+    ).autoconnect() //autostarts
 
+    //Styling 
     var body: some View {
         VStack(spacing: 28) {
 
