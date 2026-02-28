@@ -144,6 +144,13 @@ struct ContentView: View {
             // Start a new round
             startNewRound()
         }
+    
+    //  New random number + reset UI state
+    private func startNewRound() {
+        currentNumber = Int.random(in: 1...200)
+        hasAnsweredThisRound = false
+        userChoice = nil
+        }
 
     
 }
