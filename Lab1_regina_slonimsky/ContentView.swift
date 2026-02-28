@@ -78,12 +78,45 @@ struct ContentView: View {
         }
     }
     
+    // UI for an option row (Prime / Not Prime)
+    private func optionRow(title: String, option: Choice, isCorrectOption: Bool) -> some View {
+        Button {
+            handleUserTap(option)
+        } label: {
+            HStack(spacing: 12) {
+                Text(title)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                
+                Spacer()
+                
+                // Show icons only after the user answers this round
+                if hasAnsweredThisRound {
+                    // Green check appears on the correct option
+                    if isCorrectOption {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                            .font(.title2)
+                    } else {
+                        // Red cross appears on the wrong option
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundStyle(.red)
+                            .font(.title2)
+                    }
+                }
+            }
+            padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 14)
+                        .fill(Color(.secondarySystemBackground))
+                )
+        }
+        // Disable taps after they answered 
+        .disabled(hasAnsweredThisRound)
+    }
 }
 
-#Preview {
-    ContentView()
-}
-    
+   
     
     
     
