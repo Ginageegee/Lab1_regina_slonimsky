@@ -125,15 +125,26 @@ struct ContentView: View {
         let userSaysPrime = (choice == .prime)
 
         if userSaysPrime == numberIsPrime {
-                correctCount += 1
+            correctCount += 1
         } else {
-                wrongCount += 1
+            wrongCount += 1
         }
 
         recordAttemptAndMaybeShowSummary()
         
         }
-    
+    // Every 5 seconds (timer tick)
+    private func handleTimerTick() {
+        // If user didn't answer in time, count as wrong
+        if !hasAnsweredThisRound {
+            wrongCount += 1
+            recordAttemptAndMaybeShowSummary()
+            }
+
+            // Start a new round
+            startNewRound()
+        }
+
     
 }
 
