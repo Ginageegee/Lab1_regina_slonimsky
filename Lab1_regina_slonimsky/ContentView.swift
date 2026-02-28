@@ -3,19 +3,22 @@ import Combine
 
 struct ContentView: View {
 
+    //Store & select random number
     @State private var currentNumber: Int = Int.random(in: 1...200)
 
     @State private var correctCount: Int = 0
     @State private var wrongCount: Int = 0
     @State private var attemptCount: Int = 0
-
+    
+    //Did the user answer this round
     @State private var hasAnsweredThisRound: Bool = false
-
+    
+    //2 possible answers
     enum Choice {
         case prime
         case notPrime
     }
-    @State private var userChoice: Choice? = nil
+    @State private var userChoice: Choice? = nil //stores choice-  nil if nothing is selected.
 
     @State private var showSummaryAlert: Bool = false
 
