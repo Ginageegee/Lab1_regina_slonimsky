@@ -109,8 +109,11 @@ struct ContentView: View {
 
         userChoice = choice
         hasAnsweredThisRound = true
-
+        
+        //check if number is prime
         let numberIsPrime = isPrime(currentNumber)
+        
+        //check user choice 
         let userSaysPrime = (choice == .prime)
 
         if userSaysPrime == numberIsPrime {
