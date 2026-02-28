@@ -134,6 +134,7 @@ struct ContentView: View {
             wrongCount += 1
             recordAttemptAndMaybeShowSummary()
         }
+        //start a new round
         startNewRound()
     }
 
