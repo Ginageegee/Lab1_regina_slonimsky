@@ -115,7 +115,8 @@ struct ContentView: View {
         
         //check user choice 
         let userSaysPrime = (choice == .prime)
-
+        
+        //compare correct answer to users
         if userSaysPrime == numberIsPrime {
             correctCount += 1
         } else {
@@ -124,8 +125,11 @@ struct ContentView: View {
 
         recordAttemptAndMaybeShowSummary()
     }
-
+    
+    //runs every 5 sec
     private func handleTimerTick() {
+        
+        //if not answered count as wrong
         if !hasAnsweredThisRound {
             wrongCount += 1
             recordAttemptAndMaybeShowSummary()
