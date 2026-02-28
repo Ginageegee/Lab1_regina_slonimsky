@@ -137,13 +137,14 @@ struct ContentView: View {
         //start a new round
         startNewRound()
     }
-
+    //new numeber is generted
     private func startNewRound() {
         currentNumber = Int.random(in: 1...200)
         hasAnsweredThisRound = false
         userChoice = nil
     }
-
+    
+    // Increments attempt count and shows alert every 10 attempts
     private func recordAttemptAndMaybeShowSummary() {
         attemptCount += 1
         if attemptCount % 10 == 0 {
