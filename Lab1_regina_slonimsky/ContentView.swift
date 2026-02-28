@@ -152,11 +152,16 @@ struct ContentView: View {
         }
     }
 
+    //checks if number is prime
     private func isPrime(_ n: Int) -> Bool {
+        //numbers less than 2 are not prime
         if n < 2 { return false }
+        //2 is the only even prime number
         if n == 2 { return true }
+        //any other even number is not prime
         if n % 2 == 0 { return false }
-
+        
+        //only check odd divisors up to the square root
         let limit = Int(Double(n).squareRoot())
         var i = 3
         while i <= limit {
