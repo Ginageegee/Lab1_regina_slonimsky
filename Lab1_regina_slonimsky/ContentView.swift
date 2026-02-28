@@ -102,7 +102,7 @@ struct ContentView: View {
         //prevents tapping during the same round 
         .disabled(hasAnsweredThisRound)
     }
-
+    //handles what users select
     private func handleUserTap(_ choice: Choice) {
         guard !hasAnsweredThisRound else { return }
 
