@@ -114,6 +114,27 @@ struct ContentView: View {
         // Disable taps after they answered 
         .disabled(hasAnsweredThisRound)
     }
+    //  When user taps Prime / Not Prime
+    private func handleUserTap(_ choice: Choice) {
+        guard !hasAnsweredThisRound else { return }
+
+        userChoice = choice
+        hasAnsweredThisRound = true
+
+        let numberIsPrime = isPrime(currentNumber)
+        let userSaysPrime = (choice == .prime)
+
+        if userSaysPrime == numberIsPrime {
+                correctCount += 1
+        } else {
+                wrongCount += 1
+        }
+
+        recordAttemptAndMaybeShowSummary()
+        
+        }
+    
+    
 }
 
    
