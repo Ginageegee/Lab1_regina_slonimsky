@@ -71,6 +71,7 @@ struct ContentView: View {
 
     private func optionRow(title: String, option: Choice, isCorrectOption: Bool) -> some View {
         Button {
+            //runs when button is tapped 
             handleUserTap(option)
         } label: {
             HStack(spacing: 12) {
