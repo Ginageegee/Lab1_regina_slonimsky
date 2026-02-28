@@ -151,8 +151,14 @@ struct ContentView: View {
         hasAnsweredThisRound = false
         userChoice = nil
         }
-
     
+    // tracking and show summary
+    private func recordAttemptAndMaybeShowSummary() {
+        attemptCount += 1
+        if attemptCount % 10 == 0 {
+            showSummaryAlert = true
+            }
+        }
 }
 
    
